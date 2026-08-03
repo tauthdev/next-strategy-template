@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: next-strategy-template
+
+server:
+  port: 8080
+
+next:
+  api:
+    # 넥스트증권 모의투자 API 키 — 직접 커밋하지 말고 환경변수나 application-local.yml(gitignore) 사용
+    client-id: ${NEXT_CLIENT_ID:}
+    client-secret: ${NEXT_CLIENT_SECRET:}
+    account-id: ${NEXT_ACCOUNT_ID:acc_main}
+  engine:
+    max-consecutive-failures: 5
