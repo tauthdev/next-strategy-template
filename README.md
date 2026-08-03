@@ -1,7 +1,7 @@
 # next-strategy-template
 
 넥스트증권 모의투자 자동매매 전략을 시작하는 템플릿입니다.
-[next-trading-core](https://github.com/hanaset/next-trading-core) 프레임워크 위에서 **전략 클래스 하나만 작성**하면 봇이 완성됩니다.
+[next-trading-core](https://github.com/tauthdev/next-trading-core) 프레임워크 위에서 **전략 클래스 하나만 작성**하면 봇이 완성됩니다.
 
 ## 시작하기
 
@@ -10,7 +10,7 @@
 GitHub 에서 **Use this template** 버튼을 누르거나:
 
 ```bash
-gh repo create my-strategy --template hanaset/next-strategy-template --clone
+gh repo create my-strategy --template tauthdev/next-strategy-template --clone
 ```
 
 ### 2. API 키 설정
@@ -70,4 +70,4 @@ class MyStrategy : TradingStrategy {
 
 - 전략 여러 개를 한 앱에 등록해도 됩니다 (`TradingStrategy` 빈을 여러 개 만들면 각자의 주기로 실행)
 - 연속 실패가 5회 누적되면 안전을 위해 자동 정지됩니다 (미체결 전량 취소 + 신규 주문 차단)
-- 실전 전략 예시: [larry-strategy](https://github.com/hanaset/larry-strategy) — 변동성 돌파 전략
+- 실전 전략 예시: [larry-strategy](https://github.com/tauthdev/larry-strategy) — 변동성 돌파 전략
