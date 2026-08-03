@@ -70,4 +70,4 @@ class MyStrategy : TradingStrategy {
 
 - 전략 여러 개를 한 앱에 등록해도 됩니다 (`TradingStrategy` 빈을 여러 개 만들면 각자의 주기로 실행)
 - 연속 실패가 5회 누적되면 안전을 위해 자동 정지됩니다 (미체결 전량 취소 + 신규 주문 차단)
-- 실전 전략 예시: [larry-strategy](https://github.com/tauthdev/larry-strategy) — 변동성 돌파 전략
+- 실전 전략 예시: [next-larry-strategy](https://github.com/tauthdev/next-larry-strategy) — 변동성 돌파 전략
