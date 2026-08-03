@@ -1,10 +1,10 @@
 package com.example.strategy
 
-import com.hanaset.nexttrading.client.dto.CandleInterval
-import com.hanaset.nexttrading.strategy.Signal
-import com.hanaset.nexttrading.strategy.StrategyContext
-import com.hanaset.nexttrading.strategy.StrategySpec
-import com.hanaset.nexttrading.strategy.TradingStrategy
+import com.tripleauth.nexttrading.client.dto.CandleInterval
+import com.tripleauth.nexttrading.strategy.Signal
+import com.tripleauth.nexttrading.strategy.StrategyContext
+import com.tripleauth.nexttrading.strategy.StrategySpec
+import com.tripleauth.nexttrading.strategy.TradingStrategy
 import org.springframework.stereotype.Component
 import java.math.BigDecimal
 import java.math.RoundingMode
