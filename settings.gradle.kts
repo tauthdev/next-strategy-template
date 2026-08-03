@@ -1,1 +1,1 @@
-rootProject.name = "next-strategy-template"
+rootProject.name = "hermetix-strategy-template"
