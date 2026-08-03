@@ -60,6 +60,8 @@ class MyStrategy : TradingStrategy {
 }
 ```
 
+자세한 SPI 레퍼런스와 패턴은 **[전략 작성 가이드](https://github.com/tauthdev/next-trading-core/blob/main/docs/strategy-guide.md)** 를 보세요.
+
 핵심 규칙:
 - **매수**: `Signal.Buy(symbol, quantity)` — `takeProfitPrice`/`stopLossPrice` 를 주면 체결 후 코어가 자동으로 익절/손절합니다
 - **매도**: `Signal.Sell(symbol, quantity)` — 보유 수량 이상은 자동으로 잘립니다 (공매도 불가)
