@@ -1,6 +1,6 @@
 # hermetix-strategy-template
 
-넥스트증권 모의투자 자동매매 전략을 시작하는 템플릿입니다.
+증권사 모의투자 자동매매 전략을 시작하는 템플릿입니다. 기본 브로커는 넥스트증권(미국주식)이고, 설정 한 줄로 한국투자(KIS)·키움 모의투자로 전환할 수 있습니다.
 [hermetix-trading-core](https://github.com/tauthdev/hermetix-trading-core) 프레임워크 위에서 **전략 클래스 하나만 작성**하면 봇이 완성됩니다.
 
 ## 시작하기
@@ -15,7 +15,7 @@ gh repo create my-strategy --template tauthdev/hermetix-strategy-template --clon
 
 ### 2. API 키 설정
 
-[넥스트증권 OpenAPI 가이드](https://docs.nextsecurities.dev/)에서 모의투자 키를 발급받고, 환경변수로 넣습니다:
+기본 브로커(넥스트증권)는 [OpenAPI 가이드](https://docs.nextsecurities.dev/)에서 모의투자 키를 발급받고, 환경변수로 넣습니다:
 
 ```bash
 export NEXT_CLIENT_ID=pk_test_...
@@ -32,6 +32,27 @@ export NEXT_ACCOUNT_ID=acc_main
 ```
 
 미국 정규장 시간이 되면 엔진이 예제 전략(`ExampleMovingAverageStrategy`)을 1분 주기로 호출하기 시작합니다.
+
+### (선택) 다른 증권사로 전환
+
+```yaml
+# application.yml — 한국투자증권 모의투자
+hermetix:
+  broker: kis
+  kis:
+    appkey: ${KIS_APPKEY:}
+    appsecret: ${KIS_APPSECRET:}
+    cano: ${KIS_CANO:}   # 모의계좌번호 8자리
+
+# 키움증권 모의투자
+hermetix:
+  broker: kiwoom
+  kiwoom:
+    appkey: ${KIWOOM_APPKEY:}
+    secretkey: ${KIWOOM_SECRETKEY:}
+```
+
+KRX 브로커(kis/kiwoom)는 **일봉만** 지원하므로 전략의 `candleInterval` 을 `DAY_1` 로 두세요.
 
 ### 4. 내 전략 작성
 
