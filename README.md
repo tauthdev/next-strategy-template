@@ -54,6 +54,13 @@ hermetix:
 
 KRX 브로커(kis/kiwoom)는 **일봉만** 지원하므로 전략의 `candleInterval` 을 `DAY_1` 로 두세요.
 
+이 템플릿에는 `application-kis.yml` / `application-kiwoom.yml` 프로파일이 동봉되어 있어, 키만 넣고 바로 전환할 수 있습니다:
+
+```bash
+export KIS_APPKEY=... KIS_APPSECRET=... KIS_CANO=...
+SPRING_PROFILES_ACTIVE=kis ./gradlew bootRun   # 예제 전략이 삼성전자(005930)로 동작
+```
+
 ### 4. 내 전략 작성
 
 `ExampleMovingAverageStrategy.kt` 를 지우고 본인의 전략으로 교체하세요:
