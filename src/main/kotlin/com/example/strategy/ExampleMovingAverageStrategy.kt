@@ -17,18 +17,20 @@ import java.time.Duration
  * `TradingStrategy` 를 구현한 `@Component` 클래스는 엔진이 자동으로 찾아 실행합니다.
  */
 @Component
-class ExampleMovingAverageStrategy : TradingStrategy {
+class ExampleMovingAverageStrategy(
+    @org.springframework.beans.factory.annotation.Value("\${example.symbol:AAPL}") private val symbol: String,
+) : TradingStrategy {
 
     override val spec = StrategySpec(
         name = "example-ma20",
-        symbols = listOf("AAPL"),
+        symbols = listOf(symbol),
         candleInterval = CandleInterval.DAY_1,
         candleLimit = 20,
         pollInterval = Duration.ofSeconds(60),
     )
 
     override fun decide(context: StrategyContext): List<Signal> {
-        val symbol = spec.symbols.first()
+        val symbol = this.symbol
 
         val candles = context.candles(symbol)
         if (candles.size < spec.candleLimit) return emptyList()

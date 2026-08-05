@@ -1,0 +1,9 @@
+hermetix:
+  broker: kis
+  kis:
+    appkey: ${KIS_APPKEY:}
+    appsecret: ${KIS_APPSECRET:}
+    cano: ${KIS_CANO:}
+
+example:
+  symbol: "005930"
